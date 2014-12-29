@@ -1,4 +1,5 @@
 require 'faraday_middleware'
+require_relative '../faraday/raise_http_exception'
 
 module Postmates
   module Connection
@@ -16,7 +17,7 @@ module Postmates
         connection.use Faraday::Request::UrlEncoded
         connection.use Faraday::Request::BasicAuthentication, api_key, ''
         connection.use Faraday::Response::ParseJson
-        connection.use Faraday::Response::RaiseError
+        connection.use FaradayMiddleware::RaiseHTTPException
         connection.adapter(Faraday.default_adapter)
       end
     end
