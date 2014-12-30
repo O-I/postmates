@@ -1,3 +1,4 @@
+require_relative 'quote'
 require_relative 'request'
 require_relative 'connection'
 require_relative 'configuration'
@@ -17,9 +18,11 @@ module Postmates
     # pickup_address="20 McAllister St, San Francisco, CA"
     # dropoff_address="101 Market St, San Francisco, CA"
     #
-    # Returns a DeliveryQuote response
+    # Returns a Quote object or a Hash representing
+    # the JSON response body if raw_response = true
     def quote(options = {})
-      post("customers/#{customer_id}/delivery_quotes", options)
+      response = post("customers/#{customer_id}/delivery_quotes", options)
+      raw_response ? response : Quote.new(response)
     end
 
     # POST /v1/customers/:customer_id/deliveries
