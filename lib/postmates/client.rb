@@ -1,4 +1,5 @@
 require_relative 'quote'
+require_relative 'delivery'
 require_relative 'request'
 require_relative 'connection'
 require_relative 'configuration'
@@ -54,23 +55,29 @@ module Postmates
 
     # GET /v1/customers/:customer_id/deliveries/:delivery_id
     #
-    # Returns a Delivery object
+    # Returns a Delivery object or a Hash representing
+    # the JSON response body if raw_response = true
     def retrieve(delivery_id)
-      get("customers/#{customer_id}/deliveries/#{delivery_id}")
+      response = get("customers/#{customer_id}/deliveries/#{delivery_id}")
+      raw_response ? response : Delivery.new(response)
     end
 
     # POST /v1/customers/:customer_id/deliveries/:delivery_id/cancel
     #
-    # Returns a Delivery object
+    # Returns a Delivery object or a Hash representing
+    # the JSON response body if raw_response = true
     def cancel(delivery_id)
-      post("customers/#{customer_id}/deliveries/#{delivery_id}/cancel")
+      response = post("customers/#{customer_id}/deliveries/#{delivery_id}/cancel")
+      raw_response ? response : Delivery.new(response)
     end
 
     # POST /v1/customers/:customer_id/deliveries/:delivery_id/return
     #
-    # Returns a Delivery object
+    # Returns a Delivery object or a Hash representing
+    # the JSON response body if raw_response = true
     def return(delivery_id)
-      post("customers/#{customer_id}/deliveries/#{delivery_id}/return")
+      response = post("customers/#{customer_id}/deliveries/#{delivery_id}/return")
+      raw_response ? response : Delivery.new(response)
     end
   end
 end
