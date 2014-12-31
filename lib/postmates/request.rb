@@ -20,7 +20,7 @@ module Postmates
           request.body = options unless options.empty?
         end
       end
-      response.body
+      response
     end
   end
 end

@@ -19,11 +19,11 @@ module Postmates
     # pickup_address="20 McAllister St, San Francisco, CA"
     # dropoff_address="101 Market St, San Francisco, CA"
     #
-    # Returns a Quote object or a Hash representing
-    # the JSON response body if raw_response = true
+    # Returns a Quote object or the raw Faraday response
+    # if raw_response = true
     def quote(options = {})
-      response = post("customers/#{customer_id}/delivery_quotes", options)
-      raw_response ? response : Quote.new(response)
+      raw = post("customers/#{customer_id}/delivery_quotes", options)
+      raw_response ? raw : Quote.new(raw.body)
     end
 
     # POST /v1/customers/:customer_id/deliveries
@@ -40,44 +40,50 @@ module Postmates
     # dropoff_business_name="Optional Dropoff Business Name, Inc."
     # dropoff_notes="Optional note to ring the bell"
     # quote_id=qUdje83jhdk
+    #
+    # Returns a Delivery object or the raw Faraday response
+    # if raw_response = true
     def create(options = {})
-      post("customers/#{customer_id}/deliveries", options)
+      raw = post("customers/#{customer_id}/deliveries", options)
+      raw_response ? raw : Delivery.new(raw.body)
     end
 
     # GET /v1/customers/:customer_id/deliveries
     #
     # ?filter=ongoing
     #
-    # Returns a list of Delivery objects
+    # Returns a list of Delivery objects or the raw Faraday response
+    # if raw_response = true
     def list(options = {})
-      get("customers/#{customer_id}/deliveries", options)
+      raw = get("customers/#{customer_id}/deliveries", options)
+      raw_response ? raw : raw.body['data'].map { |del| Delivery.new(del) }
     end
 
     # GET /v1/customers/:customer_id/deliveries/:delivery_id
     #
-    # Returns a Delivery object or a Hash representing
-    # the JSON response body if raw_response = true
+    # Returns a Delivery object or the raw Faraday response
+    # if raw_response = true
     def retrieve(delivery_id)
-      response = get("customers/#{customer_id}/deliveries/#{delivery_id}")
-      raw_response ? response : Delivery.new(response)
+      raw = get("customers/#{customer_id}/deliveries/#{delivery_id}")
+      raw_response ? raw : Delivery.new(raw.body)
     end
 
     # POST /v1/customers/:customer_id/deliveries/:delivery_id/cancel
     #
-    # Returns a Delivery object or a Hash representing
-    # the JSON response body if raw_response = true
+    # Returns a Delivery object or the raw Faraday response
+    # if raw_response = true
     def cancel(delivery_id)
-      response = post("customers/#{customer_id}/deliveries/#{delivery_id}/cancel")
-      raw_response ? response : Delivery.new(response)
+      raw = post("customers/#{customer_id}/deliveries/#{delivery_id}/cancel")
+      raw_response ? raw : Delivery.new(raw.body)
     end
 
     # POST /v1/customers/:customer_id/deliveries/:delivery_id/return
     #
-    # Returns a Delivery object or a Hash representing
-    # the JSON response body if raw_response = true
+    # Returns a Delivery object or the raw Faraday response
+    # if raw_response = true
     def return(delivery_id)
-      response = post("customers/#{customer_id}/deliveries/#{delivery_id}/return")
-      raw_response ? response : Delivery.new(response)
+      raw = post("customers/#{customer_id}/deliveries/#{delivery_id}/return")
+      raw_response ? raw : Delivery.new(raw.body)
     end
   end
 end
