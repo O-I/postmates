@@ -1,0 +1,242 @@
+{
+  "url": "/v1/customers/cus_K8HxOXUT-7afSV/deliveries",
+  "total_count": 6,
+  "object": "list",
+  "data": [
+    {
+      "status": "delivered",
+      "dropoff": {
+        "phone_number": "415-555-1234",
+        "notes": "Optional note to ring the bell",
+        "location": {
+          "lat": 37.7930812,
+          "lng": -122.395944
+        },
+        "name": "Alice, Optional Dropoff Business Name, Inc.",
+        "address": "101 Market Street"
+      },
+      "updated": "2015-01-01T18:27:03Z",
+      "fee": 1350,
+      "quote_id": "dqt_K9LFfpSZCdAJsk",
+      "complete": true,
+      "courier": null,
+      "created": "2015-01-01T18:24:54Z",
+      "kind": "delivery",
+      "manifest": {
+        "description": "a box of kittens"
+      },
+      "currency": "usd",
+      "pickup": {
+        "phone_number": "555-555-5555",
+        "notes": "Optional note that this is Invoice #123",
+        "location": {
+          "lat": 37.7811372,
+          "lng": -122.4123037
+        },
+        "name": "The Warehouse, Optional Pickup Business Name, Inc.",
+        "address": "20 McAllister Street"
+      },
+      "dropoff_deadline": "2015-01-01T19:24:54Z",
+      "live_mode": false,
+      "pickup_eta": null,
+      "dropoff_eta": null,
+      "id": "del_K9LFxVVbl5sac-"
+    },
+    {
+      "status": "delivered",
+      "dropoff": {
+        "phone_number": "555-555-5555",
+        "notes": "Optional note that this is Invoice #123",
+        "location": {
+          "lat": 37.7811372,
+          "lng": -122.4123037
+        },
+        "name": "The Warehouse, Optional Pickup Business Name, Inc.",
+        "address": "20 McAllister Street"
+      },
+      "updated": "2014-12-31T17:32:49Z",
+      "fee": 1350,
+      "quote_id": "dqt_K9Fmi-hAt07qS-",
+      "complete": true,
+      "courier": null,
+      "created": "2014-12-31T17:30:32Z",
+      "kind": "delivery",
+      "manifest": {
+        "description": "a box of kittens"
+      },
+      "currency": "usd",
+      "pickup": {
+        "phone_number": "415-555-1234",
+        "notes": "Optional note to ring the bell",
+        "location": {
+          "lat": 37.7930812,
+          "lng": -122.395944
+        },
+        "name": "Alice, Optional Dropoff Business Name, Inc.",
+        "address": "101 Market Street"
+      },
+      "dropoff_deadline": "2014-12-31T18:31:32Z",
+      "live_mode": false,
+      "pickup_eta": null,
+      "dropoff_eta": null,
+      "id": "del_K9FmiEl7tKY2i-"
+    },
+    {
+      "status": "delivered",
+      "dropoff": {
+        "phone_number": "415-555-1234",
+        "notes": "Optional note to ring the bell",
+        "location": {
+          "lat": 37.7930812,
+          "lng": -122.395944
+        },
+        "name": "Alice, Optional Dropoff Business Name, Inc.",
+        "address": "101 Market Street"
+      },
+      "updated": "2014-12-31T17:30:09Z",
+      "fee": 1350,
+      "quote_id": "dqt_K9Fln3UUgk4WG-",
+      "complete": true,
+      "courier": null,
+      "created": "2014-12-31T17:28:09Z",
+      "kind": "delivery",
+      "manifest": {
+        "description": "a box of kittens"
+      },
+      "currency": "usd",
+      "pickup": {
+        "phone_number": "555-555-5555",
+        "notes": "Optional note that this is Invoice #123",
+        "location": {
+          "lat": 37.7811372,
+          "lng": -122.4123037
+        },
+        "name": "The Warehouse, Optional Pickup Business Name, Inc.",
+        "address": "20 McAllister Street"
+      },
+      "dropoff_deadline": "2014-12-31T18:28:09Z",
+      "live_mode": false,
+      "pickup_eta": null,
+      "dropoff_eta": null,
+      "id": "del_K9Fm9OU1DhW3x-"
+    },
+    {
+      "status": "canceled",
+      "dropoff": {
+        "phone_number": "415-555-1234",
+        "notes": "Optional note to ring the bell",
+        "location": {
+          "lat": 37.7930812,
+          "lng": -122.395944
+        },
+        "name": "Alice, Optional Dropoff Business Name, Inc.",
+        "address": "101 Market Street"
+      },
+      "updated": "2014-12-31T03:36:10Z",
+      "fee": 1350,
+      "quote_id": "dqt_K9Cir_jMr6pQD-",
+      "complete": true,
+      "courier": null,
+      "created": "2014-12-31T03:35:32Z",
+      "kind": "delivery",
+      "manifest": {
+        "description": "a box of kittens"
+      },
+      "currency": "usd",
+      "pickup": {
+        "phone_number": "555-555-5555",
+        "notes": "Optional note that this is Invoice #123",
+        "location": {
+          "lat": 37.7811372,
+          "lng": -122.4123037
+        },
+        "name": "The Warehouse, Optional Pickup Business Name, Inc.",
+        "address": "20 McAllister Street"
+      },
+      "dropoff_deadline": "2014-12-31T04:35:32Z",
+      "live_mode": false,
+      "pickup_eta": null,
+      "dropoff_eta": null,
+      "id": "del_K9Cj0ADtceFwZV"
+    },
+    {
+      "status": "delivered",
+      "dropoff": {
+        "phone_number": "415-555-1234",
+        "notes": "Optional note to ring the bell",
+        "location": {
+          "lat": 37.7930812,
+          "lng": -122.395944
+        },
+        "name": "Alice, Optional Dropoff Business Name, Inc.",
+        "address": "101 Market Street"
+      },
+      "updated": "2014-12-26T01:57:57Z",
+      "fee": 1350,
+      "quote_id": "dqt_K8mzmLxTbVBc--",
+      "complete": true,
+      "courier": null,
+      "created": "2014-12-26T01:56:08Z",
+      "kind": "delivery",
+      "manifest": {
+        "description": "a box of kittens"
+      },
+      "currency": "usd",
+      "pickup": {
+        "phone_number": "555-555-5555",
+        "notes": "Optional note that this is Invoice #123",
+        "location": {
+          "lat": 37.7811372,
+          "lng": -122.4123037
+        },
+        "name": "The Warehouse, Optional Pickup Business Name, Inc.",
+        "address": "20 McAllister Street"
+      },
+      "dropoff_deadline": "2014-12-26T02:56:08Z",
+      "live_mode": false,
+      "pickup_eta": null,
+      "dropoff_eta": null,
+      "id": "del_K8n-DBrcvQXVGV"
+    },
+    {
+      "status": "delivered",
+      "dropoff": {
+        "phone_number": "415-555-1234",
+        "notes": "Optional note to ring the bell",
+        "location": {
+          "lat": 37.7930812,
+          "lng": -122.395944
+        },
+        "name": "Alice, Optional Dropoff Business Name, Inc.",
+        "address": "101 Market Street"
+      },
+      "updated": "2014-12-26T00:30:24Z",
+      "fee": 1350,
+      "quote_id": "dqt_K8mf7VkEo5-n-V",
+      "complete": true,
+      "courier": null,
+      "created": "2014-12-26T00:28:12Z",
+      "kind": "delivery",
+      "manifest": {
+        "description": "a box of kittens"
+      },
+      "currency": "usd",
+      "pickup": {
+        "phone_number": "555-555-5555",
+        "notes": "Optional note that this is Invoice #123",
+        "location": {
+          "lat": 37.7811372,
+          "lng": -122.4123037
+        },
+        "name": "The Warehouse, Optional Pickup Business Name, Inc.",
+        "address": "20 McAllister Street"
+      },
+      "dropoff_deadline": "2014-12-26T02:28:12Z",
+      "live_mode": false,
+      "pickup_eta": null,
+      "dropoff_eta": null,
+      "id": "del_K8mfb4I7idlgh-"
+    }
+  ],
+  "next_href": null
+}

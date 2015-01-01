@@ -1,0 +1,10 @@
+{
+  "kind": "delivery_quote",
+  "fee": 1350,
+  "created": "2015-01-01T18:23:43Z",
+  "expires": "2015-01-01T18:28:43Z",
+  "currency": "usd",
+  "duration": 60,
+  "dropoff_eta": "2015-01-01T19:28:43Z",
+  "id": "dqt_K9LFfpSZCdAJsk"
+}
