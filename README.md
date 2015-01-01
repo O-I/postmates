@@ -1,26 +1,28 @@
 # Postmates
+[![Build Status](https://travis-ci.org/O-I/postmates.svg?branch=master)](https://travis-ci.org/O-I/postmates)
 
-TODO: Write a gem description
+Ruby wrapper for the [Postmates API](https://postmates.com/developer/docs).
 
 ## Installation
 
-Add this line to your application's Gemfile:
+`gem install 'postmates'` or add `gem 'postmates'` to your Gemfile and `bundle`.
+
+## Configuration
+
+You'll need an API key and your customer ID. You can sign up to register your app [here](https://postmates.com/developer/register). Just want to test things out? Postmates has you [covered](https://postmates.com/developer/testing).
 
 ```ruby
-gem 'postmates'
+@client = Postmates::Client.new
+
+@client.configure do |config|
+  config.api_key = 'YOUR_API_KEY'
+  config.customer_id = 'YOUR_CUSTOMER_ID'
+end
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install postmates
 
 ## Usage
 
-TODO: Write usage instructions here
+Full documentation coming soon. In the meantime, check out Postmates' official developer [documentation](https://postmates.com/developer/docs) for more information.
 
 ## Contributing
 
