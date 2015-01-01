@@ -21,7 +21,7 @@ end
 HTTP_REQUEST_METHODS = [:get, :post]
 
 HTTP_REQUEST_METHODS.each do |verb|
-  define_method("stub_#{verb}".to_sym) do |path, options = {}|
+  Object.send(:define_method, "stub_#{verb}") do |path, options = {}|
     file = options.delete(:returns)
     endpoint = 'https://1234:@api.postmates.com/v1/' + path
     headers  = Postmates::Configuration::DEFAULT_HEADERS
