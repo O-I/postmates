@@ -10,10 +10,6 @@ rvm:
   - rbx-2
   - ruby-head
 
-sudo: false
-
-bundler_args: --without development --retry=3 --jobs=3
-
 env:
   global:
     - JRUBY_OPTS="$JRUBY_OPTS --debug"
