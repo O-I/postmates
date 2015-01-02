@@ -1,3 +1,11 @@
+require 'simplecov'
+require 'coveralls'
+
+SimpleCov.formatters = [SimpleCov::Formatter::HTMLFormatter,
+                        Coveralls::SimpleCov::Formatter]
+
+SimpleCov.start
+
 require 'json'
 require 'rspec'
 require 'webmock/rspec'
@@ -7,7 +15,7 @@ RSpec.configure do |config|
   config.expect_with(:rspec) { |c| c.syntax = :expect }
 end
 
-WebMock.disable_net_connect!
+WebMock.disable_net_connect!(allow: 'coveralls.io')
 
 def postmates_test_client
   Postmates.new.tap do |client|
