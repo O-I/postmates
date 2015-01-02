@@ -30,6 +30,7 @@ describe Postmates::Client do
         expect(client.create(params).status).to eq 'pending'
         expect(client.create(params).manifest['description'])
           .to eq 'a box of kittens'
+        expect(client.create(params).delivered?).to be false
       end
 
       it 'returns a Postmates::Delivery' do
@@ -65,6 +66,7 @@ describe Postmates::Client do
         expect(client.retrieve(delivery_id).status).to eq 'pending'
         expect(client.retrieve(delivery_id).manifest['description'])
           .to eq 'a box of kittens'
+        expect(client.retrieve(delivery_id).delivered?).to be false
       end
 
       it 'returns a Postmates::Delivery' do
@@ -83,6 +85,7 @@ describe Postmates::Client do
         expect(client.cancel(delivery_id).status).to eq 'pending'
         expect(client.cancel(delivery_id).manifest['description'])
           .to eq 'a box of kittens'
+        expect(client.cancel(delivery_id).delivered?).to be false
       end
 
       it 'returns a Postmates::Delivery' do
@@ -101,6 +104,7 @@ describe Postmates::Client do
         expect(client.return(delivery_id).status).to eq 'pending'
         expect(client.return(delivery_id).manifest['description'])
           .to eq 'a box of kittens'
+        expect(client.return(delivery_id).delivered?).to be false
       end
 
       it 'returns a Postmates::Delivery' do
