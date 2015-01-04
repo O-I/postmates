@@ -20,7 +20,7 @@ module Postmates
     # Returns a Quote object or the raw Faraday response
     # if raw_response = true
     def quote(options = {})
-      raw = post("customers/#{customer_id}/delivery_quotes", options)
+      post("customers/#{customer_id}/delivery_quotes", options)
     end
 
     # POST /v1/customers/:customer_id/deliveries
