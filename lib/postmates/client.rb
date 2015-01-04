@@ -1,5 +1,3 @@
-require_relative 'quote'
-require_relative 'delivery'
 require_relative 'request'
 require_relative 'connection'
 require_relative 'configuration'
@@ -23,7 +21,6 @@ module Postmates
     # if raw_response = true
     def quote(options = {})
       raw = post("customers/#{customer_id}/delivery_quotes", options)
-      raw_response ? raw : Quote.new(raw.body)
     end
 
     # POST /v1/customers/:customer_id/deliveries
@@ -44,8 +41,7 @@ module Postmates
     # Returns a Delivery object or the raw Faraday response
     # if raw_response = true
     def create(options = {})
-      raw = post("customers/#{customer_id}/deliveries", options)
-      raw_response ? raw : Delivery.new(raw.body)
+      post("customers/#{customer_id}/deliveries", options)
     end
 
     # GET /v1/customers/:customer_id/deliveries
@@ -55,8 +51,7 @@ module Postmates
     # Returns a list of Delivery objects or the raw Faraday response
     # if raw_response = true
     def list(options = {})
-      raw = get("customers/#{customer_id}/deliveries", options)
-      raw_response ? raw : raw.body['data'].map { |del| Delivery.new(del) }
+      get("customers/#{customer_id}/deliveries", options)
     end
 
     # GET /v1/customers/:customer_id/deliveries/:delivery_id
@@ -64,8 +59,7 @@ module Postmates
     # Returns a Delivery object or the raw Faraday response
     # if raw_response = true
     def retrieve(delivery_id)
-      raw = get("customers/#{customer_id}/deliveries/#{delivery_id}")
-      raw_response ? raw : Delivery.new(raw.body)
+      get("customers/#{customer_id}/deliveries/#{delivery_id}")
     end
 
     # POST /v1/customers/:customer_id/deliveries/:delivery_id/cancel
@@ -73,8 +67,7 @@ module Postmates
     # Returns a Delivery object or the raw Faraday response
     # if raw_response = true
     def cancel(delivery_id)
-      raw = post("customers/#{customer_id}/deliveries/#{delivery_id}/cancel")
-      raw_response ? raw : Delivery.new(raw.body)
+      post("customers/#{customer_id}/deliveries/#{delivery_id}/cancel")
     end
 
     # POST /v1/customers/:customer_id/deliveries/:delivery_id/return
@@ -82,8 +75,7 @@ module Postmates
     # Returns a Delivery object or the raw Faraday response
     # if raw_response = true
     def return(delivery_id)
-      raw = post("customers/#{customer_id}/deliveries/#{delivery_id}/return")
-      raw_response ? raw : Delivery.new(raw.body)
+      post("customers/#{customer_id}/deliveries/#{delivery_id}/return")
     end
   end
 end

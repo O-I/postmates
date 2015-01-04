@@ -1,3 +1,5 @@
+require_relative 'response'
+
 module Postmates
   module Request
     def get(path, options = {})
@@ -20,7 +22,7 @@ module Postmates
           request.body = options unless options.empty?
         end
       end
-      response
+      raw_response ? response : Response.build(response.body)
     end
   end
 end
