@@ -8,6 +8,7 @@
 /spec/reports/
 /tmp/
 *.bundle
+*.gem
 *.so
 *.o
 *.a
