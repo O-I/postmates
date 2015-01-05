@@ -12,6 +12,7 @@ describe Postmates::Client do
       it 'fetches a delivery quote' do
         expect(client.quote(params).id).to eq 'dqt_K9LFfpSZCdAJsk'
         expect(client.quote(params).fee).to eq 1350
+        expect(client.quote(params).expired?).to be true
       end
 
       it 'returns a Postmates::Quote' do

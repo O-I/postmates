@@ -15,5 +15,9 @@ module Postmates
       @expires_at  = timeify hash['expires']
       @dropoff_eta = timeify hash['dropoff_eta']
     end
+
+    def expired?
+      Time.now.utc.to_datetime > expires_at
+    end
   end
 end
