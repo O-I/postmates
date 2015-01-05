@@ -31,11 +31,12 @@ HTTP_REQUEST_METHODS = [:get, :post]
 HTTP_REQUEST_METHODS.each do |verb|
   Object.send(:define_method, "stub_#{verb}") do |path, options = {}|
     file = options.delete(:returns)
+    code = options.delete(:response_code) || 200
     endpoint = 'https://1234:@api.postmates.com/v1/' + path
     headers  = Postmates::Configuration::DEFAULT_HEADERS
     stub_request(verb, endpoint)
       .with(headers: headers, body: options)
-      .to_return(body: fixture(file))
+      .to_return(body: fixture(file), status: code)
   end
 end
 

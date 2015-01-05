@@ -1,0 +1,5 @@
+{
+  "kind": "error",
+  "code": "not_found",
+  "message": "The requested endpoint could not be found."
+}

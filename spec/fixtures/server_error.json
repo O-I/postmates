@@ -1,0 +1,5 @@
+{
+  "kind": "error",
+  "code": "server_error",
+  "message": "We had a problem processing the request."
+}

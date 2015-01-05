@@ -1,0 +1,14 @@
+{
+  "kind": "error",
+  "code": "invalid_params",
+  "params": {
+    "dropoff_name": "This field is required.",
+    "pickup_phone_number": "This field is required.",
+    "dropoff_address": "This field is required.",
+    "pickup_name": "This field is required.",
+    "manifest": "This field is required.",
+    "pickup_address": "This field is required.",
+    "dropoff_phone_number": "This field is required."
+  },
+  "message": "The parameters of your request were invalid."
+}
