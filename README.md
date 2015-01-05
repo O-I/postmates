@@ -53,7 +53,7 @@ quote = @client.quote(pickup_address: from, dropoff_address: to)
 
 quote.fee                          # => 1350
 quote.currency                     # => "usd"
-format = '%m/%d/%Y %I:%M:%S%p      # all times are returned in UTC
+format = '%m/%d/%Y %I:%M:%S%p'     # all times are returned in UTC
 quote.expires_at.strftime(format)  # => "01/05/2015 09:35:28PM"
 quote.expired?                     # => false
 ```
