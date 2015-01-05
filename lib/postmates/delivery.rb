@@ -19,7 +19,7 @@ module Postmates
       @pickup      =         hash['pickup']
       @dropoff     =         hash['dropoff']
       @courier     =         hash['courier']
-      @image_url   =         hash['image_href']
+      @image_url   =  urlify hash['image_href']
       @created_at  = timeify hash['created']
       @updated_at  = timeify hash['updated']
       @pickup_eta  = timeify hash['pickup_eta']
