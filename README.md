@@ -44,7 +44,7 @@ Descriptions and examples of the supported actions are below. For a more detaile
 
 #### POST /v1/customers/:customer_id/delivery_quotes
 
-Get a delivery quote. Returns a `Quote` object.
+Get a delivery quote. Returns a `Postmates::Quote` object.
 
 ```ruby
 from  = "20 McAllister St, San Francisco, CA"
@@ -60,7 +60,7 @@ quote.expired?                     # => false
 
 #### POST /v1/customers/:customer_id/deliveries
 
-Create a delivery. Returns a `Delivery` object.
+Create a delivery. Returns a `Postmates::Delivery` object.
 
 ```ruby
 # all fields required except where noted
@@ -89,7 +89,7 @@ delivery.dropoff    # a hash representing dropoff information
 
 #### GET /v1/customers/:customer_id/deliveries
 
-Fetch a list of all deliveries for a customer. Returns an array of `Delivery` objects.
+Fetch a list of all deliveries for a customer. Returns an array of `Postmates::Delivery` objects.
 
 ```ruby
 my_deliveries = @client.list
@@ -106,7 +106,7 @@ deliveries.next_href   # a URI object representing the path to the next page
 
 #### GET /v1/customers/:customer_id/deliveries/:delivery_id
 
-Fetch a single delivery by id. Returns a `Delivery` object.
+Fetch a single delivery by id. Returns a `Postmates::Delivery` object.
 
 ```ruby
 @client.retrieve('del_K9gEsDNuPJ-lLV')
@@ -114,7 +114,7 @@ Fetch a single delivery by id. Returns a `Delivery` object.
 
 #### POST /v1/customers/:customer_id/deliveries/:delivery_id/cancel
 
-Cancel an ongoing delivery prior to pickup. Returns a `Delivery` object.
+Cancel an ongoing delivery prior to pickup. Returns a `Postmates::Delivery` object.
 
 ```ruby
 @client.cancel('del_K9gEsDNuPJ-lLV')
@@ -122,7 +122,7 @@ Cancel an ongoing delivery prior to pickup. Returns a `Delivery` object.
 
 #### POST /v1/customers/:customer_id/deliveries/:delivery_id/return
 
-Cancel an ongoing delivery that was already picked up and create a delivery that is a reverse of the original. The items will get returned to the original pickup location. Returns a `Delivery` object.
+Cancel an ongoing delivery that was already picked up and create a delivery that is a reverse of the original. The items will get returned to the original pickup location. Returns a `Postmates::Delivery` object.
 
 ```ruby
 @client.cancel('del_K9gEsDNuPJ-lLV')
