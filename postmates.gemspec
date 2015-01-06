@@ -9,13 +9,12 @@ Gem::Specification.new do |s|
   s.authors               = ['Rahul Horé']
   s.email                 = ['hore.rahul@gmail.com']
   s.summary               = %q{Ruby wrapper for the Postmates API}
-  s.description           = %q{Ruby wrapper for the Postmates API}
+  s.description           = %q{Ruby client for the Postmates API}
   s.homepage              = 'https://github.com/O-I/postmates'
   s.license               = 'MIT'
-
   s.files                 = `git ls-files -z`.split("\x0")
-  s.executables           = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.test_files            = s.files.grep(%r{^(test|spec|features)/})
+  s.files                 = s.files - s.test_files
   s.require_paths         = ['lib']
   s.required_ruby_version = Gem::Requirement.new(">= 1.9.3")
 
