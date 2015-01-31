@@ -12,9 +12,8 @@ Gem::Specification.new do |s|
   s.description           = %q{Ruby client for the Postmates API}
   s.homepage              = 'https://github.com/O-I/postmates'
   s.license               = 'MIT'
-  s.files                 = `git ls-files -z`.split("\x0")
-  s.test_files            = s.files.grep(%r{^(test|spec|features)/})
-  s.files                 = s.files - s.test_files
+  s.files                 = `git ls-files -z`.split("\x0").reject { |f|
+                              f.match(%r{^(test|spec|features)/}) }
   s.require_paths         = ['lib']
   s.required_ruby_version = Gem::Requirement.new(">= 1.9.3")
 
