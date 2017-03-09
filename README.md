@@ -1,6 +1,7 @@
 # Postmates
 [![Build Status](https://travis-ci.org/O-I/postmates.svg?branch=master)](https://travis-ci.org/O-I/postmates)
 [![Coverage Status](https://img.shields.io/coveralls/O-I/postmates.svg)](https://coveralls.io/r/O-I/postmates?branch=master)
+[![API Testing](https://img.shields.io/badge/API%20Test-RapidAPI-blue.svg)](https://rapidapi.com/package/PostmatesAPI/functions?utm_source=PostmatesGithub&utm_medium=button&utm_content=Vender_GitHub)
 
 Ruby wrapper for the [Postmates API](https://postmates.com/developer/docs).
 
