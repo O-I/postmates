@@ -112,5 +112,25 @@ describe Postmates::Client do
         expect(client.return(delivery_id)).to be_a Postmates::Delivery
       end
     end
+
+    describe '#add_tip' do
+      let(:delivery_id) { 'del_K9LFxVVbl5sac-' }
+      let(:path) { path_to "deliveries/#{delivery_id}" }
+      let(:params) { payload 'add_tip_params.json' }
+      before { stub_post path, returns: 'delivery.json' }
+
+      it 'returns a single delivery by id' do
+        expect(client.add_tip(delivery_id, params).id).to eq 'del_K9LFxVVbl5sac-'
+        expect(client.add_tip(delivery_id, params).quote_id).to eq 'dqt_K9LFfpSZCdAJsk'
+        expect(client.add_tip(delivery_id, params).status).to eq 'pending'
+        expect(client.add_tip(delivery_id, params).manifest['description'])
+          .to eq 'a box of kittens'
+        expect(client.add_tip(delivery_id, params).delivered?).to be false
+      end
+
+      it 'returns a Postmates::Delivery' do
+        expect(client.add_tip(delivery_id, params)).to be_a Postmates::Delivery
+      end
+    end
   end
 end

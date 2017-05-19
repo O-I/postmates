@@ -125,7 +125,15 @@ Cancel an ongoing delivery prior to pickup. Returns a `Postmates::Delivery` obje
 Cancel an ongoing delivery that was already picked up and create a delivery that is a reverse of the original. The items will get returned to the original pickup location. Returns a `Postmates::Delivery` object.
 
 ```ruby
-@client.cancel('del_K9gEsDNuPJ-lLV')
+@client.return('del_K9gEsDNuPJ-lLV')
+```
+
+#### POST /v1/customers/:customer_id/deliveries/:delivery_id
+
+Add a tip (in cents) to a delivery (after the delivery has been completed). Returns a `Postmates::Delivery` object.
+
+```ruby
+@client.add_tip('del_K9gEsDNuPJ-lLV', tip_by_customer: 295)
 ```
 
 ## Contributing
