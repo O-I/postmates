@@ -30,6 +30,18 @@ describe Postmates::Error do
       end
     end
 
+    describe 'when customer account is suspended' do
+      before do
+        stub_get(path_to('deliveries'),
+          response_code: 402, returns: 'service_unavailable.json')
+      end
+
+      it 'raises Postmates::CustomerSuspended' do
+        expect { client.list }
+          .to raise_error Postmates::CustomerSuspended
+      end
+    end
+
     describe 'Forbidden' do
       let(:bad_client) { Postmates.new }
       before do
@@ -76,6 +88,18 @@ describe Postmates::Error do
       it 'raises Postmates::ServiceUnavailable' do
         expect { client.list }
           .to raise_error Postmates::ServiceUnavailable
+      end
+    end
+
+    describe 'with an unknown error' do
+      before do
+        stub_get(path_to('deliveries'),
+          response_code: 504, returns: 'unknown.json')
+      end
+
+      it 'raises Postmates::Error' do
+        expect { client.list }
+          .to raise_error Postmates::Error
       end
     end
   end
