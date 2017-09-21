@@ -1,0 +1,5 @@
+{
+  "kind": "error",
+  "code": "rate_limit_exceeded",
+  "message": "You are attempting to exceed our rate limit"
+}

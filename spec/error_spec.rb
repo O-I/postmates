@@ -55,6 +55,23 @@ describe Postmates::Error do
       end
     end
 
+    describe 'rate limit reached' do
+      before do
+        50.times do
+          stub_post(path_to('deliveries'),
+                    params.merge(response_code: 400,
+                                 returns: 'invalid_params.json'))
+        end
+        stub_get(path_to('deliveries'),
+                 response_code: 429, returns: 'rate_limit.json')
+      end
+
+      it 'raises Postmates::RateLimit' do
+        expect { client.list ) }
+          .to raise_error Postmates::RateLimit
+      end
+    end
+
     describe 'when there is a problem processing the request' do
       before do
         stub_get(path_to('deliveries'),
