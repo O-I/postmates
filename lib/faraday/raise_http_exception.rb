@@ -14,6 +14,7 @@ module FaradayMiddleware
         when 401 ; raise Postmates::Unauthorized,        msg
         when 403 ; raise Postmates::Forbidden,           msg
         when 404 ; raise Postmates::NotFound,            msg
+        when 429 ; raise Postmates::RateLimit,           msg
         when 500 ; raise Postmates::InternalServerError, msg
         when 503 ; raise Postmates::ServiceUnavailable,  msg
         end
