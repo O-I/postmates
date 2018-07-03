@@ -77,5 +77,13 @@ module Postmates
     def return(delivery_id)
       post("customers/#{customer_id}/deliveries/#{delivery_id}/return")
     end
+
+    # POST /v1/customers/:customer_id/deliveries/:delivery_id
+    #
+    # Returns a Delivery object or the raw Faraday response
+    # if raw_response = true
+    def tip(delivery_id, amount_in_cents)
+      post("customers/#{customer_id}/deliveries/#{delivery_id}", {tip_by_customer: amount_in_cents})
+    end
   end
 end
